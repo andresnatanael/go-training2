@@ -1,4 +1,5 @@
 package main
 
-type function struct {
+func main() {
+
 }

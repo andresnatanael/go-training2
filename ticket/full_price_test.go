@@ -1,13 +1,23 @@
-package customer
+package ticket
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+	"time"
+
+	"github.com/andresnatanael/go-training2/cinema"
+)
 
 func TestFullPrice(t *testing.T) {
 
-	var customer Customer = &FullPrice{}
+	movie := &cinema.Movie{Name: "Armageddon"}
+	showtime := time.Date(2017, 11, 20, 20, 10, 0, 0, time.Local)
 
-	if customer.GetPrice() != 100 {
-		t.Errorf("GOT: %d EXPECTED: %d", customer.GetPrice(), 100)
+	var ticket Ticket = &FullPrice{movie, showtime}
+
+	fmt.Println(ticket)
+	if ticket.GetPrice() != float32(100) {
+		t.Errorf("GOT: %f EXPECTED: %f", ticket.GetPrice(), float32(100))
 	}
 
 }
