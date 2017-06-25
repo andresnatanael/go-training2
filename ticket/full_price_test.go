@@ -15,8 +15,9 @@ func TestFullPrice(t *testing.T) {
 
 	var ticket Ticket = &FullPrice{movie, showtime}
 
-	fmt.Println(ticket)
+	fmt.Println(ticket.GetMovie())
 	if ticket.GetPrice() != float32(100) {
+
 		t.Errorf("GOT: %f EXPECTED: %f", ticket.GetPrice(), float32(100))
 	}
 

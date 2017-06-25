@@ -7,7 +7,9 @@ import (
 )
 
 const (
-	regularPrice = float32(100)
+	regularPrice    = float32(100)
+	guestDiscount   = float32(100)
+	retiredDiscount = float32(50)
 )
 
 //Ticket interface represent the base
