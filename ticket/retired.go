@@ -8,18 +8,18 @@ import (
 
 //Retired structure
 type Retired struct {
-	movie    *cinema.Movie
-	showtime time.Time
+	Movie    *cinema.Movie
+	Showtime time.Time
 }
 
 //GetMovie return the movie for the ticket
 func (t *Retired) GetMovie() cinema.Movie {
-	return *t.movie
+	return *t.Movie
 }
 
 //GetShowTime return the dateTime of the movie
 func (t *Retired) GetShowTime() time.Time {
-	return t.showtime
+	return t.Showtime
 }
 
 //GetPrice returns the price for FullPrice Tickets

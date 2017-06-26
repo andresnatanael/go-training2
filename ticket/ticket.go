@@ -15,9 +15,11 @@ const (
 //Ticket interface represent the base
 //Operations for tickets
 type Ticket interface {
+	CreateTicket(movie, showtime) *Ticket
 	GetMovie() cinema.Movie
 	GetShowTime() time.Time
-	GetPrice() float32
+	GetCurrentPrice() float32
+	GetPaidPrice() float32
 	GetType() string
 	GetDiscount() float32
 }
