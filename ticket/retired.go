@@ -8,8 +8,9 @@ import (
 
 //Retired structure
 type Retired struct {
-	Movie    *cinema.Movie
-	Showtime time.Time
+	Movie     *cinema.Movie
+	Showtime  time.Time
+	PaidPrice float32
 }
 
 //GetMovie return the movie for the ticket
@@ -22,9 +23,14 @@ func (t *Retired) GetShowTime() time.Time {
 	return t.Showtime
 }
 
-//GetPrice returns the price for FullPrice Tickets
-func (t *Retired) GetPrice() float32 {
-	return regularPrice - ((regularPrice * retiredDiscount) / 100)
+//GetCurrentPrice returns the actual price for retired
+func (t *Retired) GetCurrentPrice() float32 {
+	return RegularPrice - ((RegularPrice * retiredDiscount) / 100)
+}
+
+//GetPaidPrice returns the original price of the buy
+func (t *Retired) GetPaidPrice() float32 {
+	return t.PaidPrice
 }
 
 //GetType return the tiket type

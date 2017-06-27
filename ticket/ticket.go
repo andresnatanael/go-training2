@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	regularPrice    = float32(100)
+	RegularPrice    = float32(100)
 	guestDiscount   = float32(100)
 	retiredDiscount = float32(50)
 )
@@ -15,7 +15,6 @@ const (
 //Ticket interface represent the base
 //Operations for tickets
 type Ticket interface {
-	CreateTicket(movie, showtime) *Ticket
 	GetMovie() cinema.Movie
 	GetShowTime() time.Time
 	GetCurrentPrice() float32

@@ -8,8 +8,9 @@ import (
 
 //Guest structure
 type Guest struct {
-	Movie    *cinema.Movie
-	Showtime time.Time
+	Movie     *cinema.Movie
+	Showtime  time.Time
+	PaidPrice float32
 }
 
 //GetMovie return the movie for the ticket
@@ -22,9 +23,14 @@ func (t *Guest) GetShowTime() time.Time {
 	return t.Showtime
 }
 
-//GetPrice returns the price for FullPrice Tickets
-func (t *Guest) GetPrice() float32 {
-	return regularPrice - ((regularPrice * guestDiscount) / 100)
+//GetCurrentPrice returns the actual price for guests
+func (t *Guest) GetCurrentPrice() float32 {
+	return RegularPrice - ((RegularPrice * guestDiscount) / 100)
+}
+
+//GetPaidPrice returns the original price of the buy
+func (t *Guest) GetPaidPrice() float32 {
+	return t.PaidPrice
 }
 
 //GetType return the tiket type
