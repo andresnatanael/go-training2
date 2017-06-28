@@ -11,6 +11,7 @@ import (
 func TestFullPrice(t *testing.T) {
 
 	movie := &cinema.Movie{Name: "Armageddon"}
+
 	showtime := time.Date(2017, 11, 20, 20, 10, 0, 0, time.Local)
 
 	var ticket Ticket = &FullPrice{movie, showtime, 0}

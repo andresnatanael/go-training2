@@ -33,6 +33,11 @@ func (t *FullPrice) GetPaidPrice() float32 {
 	return t.PaidPrice
 }
 
+//SetPaidPrice records the paid price for the ticket
+func (t *FullPrice) SetPaidPrice(price float32) {
+	t.PaidPrice = price
+}
+
 //GetType return the tiket type
 func (t *FullPrice) GetType() string {
 	return "full_price"
