@@ -35,7 +35,7 @@ func main() {
 		for _, v := range tickets {
 			profit = profit + v.GetPaidPrice()
 		}
-		c.JSON(200, profit)
+		c.JSON(200, gin.H{"total_profits": profit})
 	})
 
 	r.POST("/buy_ticket/full_price", func(c *gin.Context) {
